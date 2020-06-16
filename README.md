@@ -1,4 +1,4 @@
-## YandexDJ React App
+# YandexDJ React App
 
 React App for YandexDJ project. Avaliable two pages:
 ```
