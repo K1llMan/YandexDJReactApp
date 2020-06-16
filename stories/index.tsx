@@ -1,15 +1,6 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import * as Stories from './stories-list';
 
-import { Provider } from 'react-redux';
-import MusicPlayerStore from '../src/store/MusicPlayerStore';
-
-import { MusicPlayer } from '../src/components';
-import { playlists } from '../stories/playlists';
-
-storiesOf('Components', module)
-    .add('Player', () =>
-        <Provider store={MusicPlayerStore}>
-            <MusicPlayer playlist={playlists[1]} />
-        </Provider>)
+Object.keys(Stories)
+    .map(k => Stories[k])
+    .sort((a, b) => a.order - b.order)
+    .forEach(s => s.add());

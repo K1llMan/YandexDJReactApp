@@ -10,12 +10,22 @@ module.exports = function expressMiddleware(router) {
         }     
     });
 
+    let wsp = proxy({
+        target: 'http://localhost:5000', // сервер с вашим rest api
+        changeOrigin: true,
+        ws: true
+    });    
+
     // Привязки путей к прокси
     let bindings = [
+        {
+            path: 'api/ws',
+            proxy: wsp
+        },        
         { 
             path: '/api',
             proxy: p
-        }      
+        }
     ]
 
     bindings.forEach((binding) => router.use(binding.path, binding.proxy));

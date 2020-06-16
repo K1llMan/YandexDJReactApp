@@ -1,0 +1,14 @@
+{
+  "name": "@Yandex.Dj/application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "^16.13.1"
+  }
+}

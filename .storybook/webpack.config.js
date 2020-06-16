@@ -6,6 +6,11 @@ module.exports = async ({ config, mode }) => {
     config.plugins.push(new webpack.ProvidePlugin({
         "regeneratorRuntime": "regenerator-runtime/runtime",
     }));
+    config.plugins.push(new CopyPlugin({
+        patterns: [
+            { from: 'src/service-common/fonts', to: 'fonts' }
+        ]
+    }));
 
     config.module.rules = [];
 
@@ -48,7 +53,7 @@ module.exports = async ({ config, mode }) => {
                         importLoaders: 1,
                         url: false
                     },
-                },              
+                },
                 {
                     loader: "sass-loader",
                     options: {

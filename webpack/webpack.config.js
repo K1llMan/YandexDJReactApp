@@ -4,9 +4,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
+// Сборка шрифтов
+const FontBuilder = require('./FontsBuilder').default;
+FontBuilder({
+    source: '../src/service-common/fonts/icons',
+    output: '../src/service-common/fonts',
+    outputCss: '../src/service-common/scss/common/IconsFont.scss',
+    fontName: 'IconsFont',
+    formats: [ 'eot', 'ttf', 'woff', 'woff2' ],
+    template: '../src/service-common/fonts/icons/IconsFont.scss.njk',
+    fontPath: './fonts/'
+})
+
 let config = {
     entry: {
-        ...helper.getModules('./src/index.tsx',
+        ...helper.getModules('./src/application/index.tsx',
             (name) => name != null)
     },
     plugins: [
@@ -19,7 +31,8 @@ let config = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: './public', to: './' }
+                { from: './public', to: './' },
+                { from: './src/service-common/fonts', to: './fonts', globOptions: { ignore: [ "**/icons" ] } }
             ]
         })
     ],

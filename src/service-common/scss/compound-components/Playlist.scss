@@ -1,0 +1,49 @@
+.Playlist {
+    position: absolute;
+
+    display: flex;
+    flex-flow: column;
+
+    width: 100vw;
+    height: calc(100vh - 96px);
+
+    left: 0;
+    top: 0;
+
+    background-color: white;
+
+    &.hide {
+        visibility: collapse;
+    }
+
+    .header {
+        display: flex;
+        
+        align-items: center;
+        justify-content: center;
+
+        margin: 16px 0;
+
+        .info {
+            display: flex;
+            flex-grow: 1;
+
+            align-items: center;
+            justify-content: center;
+
+            .title {
+                @extend %headline1;
+                margin: 0 16px
+            }    
+        }
+    }
+
+    .tracks {
+        display: flex;
+        flex-flow: column;
+
+        overflow-y: auto;
+
+        align-self: center;
+    }
+}

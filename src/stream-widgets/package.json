@@ -1,0 +1,14 @@
+{
+  "name": "@Yandex.Dj/stream-widgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ts/index.tsx",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "^16.13.1"
+  }
+}

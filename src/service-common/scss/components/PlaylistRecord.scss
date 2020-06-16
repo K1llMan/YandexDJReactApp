@@ -1,0 +1,13 @@
+.PlaylistRecord {
+    display: flex;
+    
+    @extend %title2;
+
+    .title {
+        margin-right: 16px;
+    }
+
+    button {
+        margin-left: auto;
+    }
+}

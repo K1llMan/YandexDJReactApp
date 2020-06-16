@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "IconsFont";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./fonts/IconsFont.eot");
+  src: url("./fonts/IconsFont.eot?#iefix") format("embedded-opentype"), url("./fonts/IconsFont.woff2") format("woff2"), url("./fonts/IconsFont.woff") format("woff"), url("./fonts/IconsFont.ttf") format("truetype"), 
+}
+
+.IconsFont {
+  display: inline-block;
+  font-family: "IconsFont";
+  font-weight: 400;
+  font-size: 24px; /* Preferred icon size */
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.IconsFont.close:before {
+  content: "\e000";
+}
+
+.IconsFont.plus:before {
+  content: "\e001";
+}
+

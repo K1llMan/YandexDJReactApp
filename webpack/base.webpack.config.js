@@ -125,9 +125,9 @@ module.exports = {
                     enforce: true
                 },
                 // Общие модули
-                etl: {
+                service: {
                     name: 'common',
-                    test: /[\\/]packages[\\/]/,
+                    test: /[\\/]src[\\/]/,
                     enforce: true
                 },
             }

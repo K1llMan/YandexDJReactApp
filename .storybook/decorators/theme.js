@@ -2,7 +2,7 @@ import React from "react";
 import { addDecorator } from "@storybook/react";
 import { select, color, text } from '@storybook/addon-knobs';
 
-//import '../../packages/etl-manager-common/src/css/themes.scss';
+import '@Yandex.Dj/service-common/scss/root.scss';
 
 export default {
     order: 1,

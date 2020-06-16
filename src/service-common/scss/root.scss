@@ -1,0 +1,18 @@
+@import './common/button';
+@import './common/typography';
+@import './common/IconsFont';
+
+@import './components/PlaylistRecord';
+
+@import './compound-components/Form';
+@import './compound-components/Playlist';
+@import './compound-components/PlaylistCover';
+@import './compound-components/PlaylistsContainer';
+
+body {
+    margin: 0;
+
+    * {
+        box-sizing: border-box;
+    }    
+}

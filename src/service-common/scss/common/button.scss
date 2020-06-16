@@ -1,0 +1,29 @@
+button {
+    outline: none;
+    
+    &.icon-button {
+        height: auto;
+        padding: 0;
+    
+        border-radius: 50%;
+    
+        color: black;
+        background-color: transparent;
+        border: none;
+    
+        &:hover {
+            color: gray;
+        }
+    
+        &:active {
+            color: lightslategray;
+            border: none;
+            background-color: transparent;
+        } 
+    
+        &:disabled {
+            pointer-events: none;
+            color: slategray;
+        }        
+    }
+}
