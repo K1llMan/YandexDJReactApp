@@ -12,6 +12,9 @@ export interface PlaylistProps {
 }
 
 const Playlist = (props: PlaylistProps) => {
+    if (!props.playlist)
+        return null;
+
     return (
         <div className={combineClassNames(['Playlist', props.visible ? '' : 'hide'])}>
             <div className='header'>
@@ -23,7 +26,10 @@ const Playlist = (props: PlaylistProps) => {
                 <button className='icon-button' onClick={props.onClose}><i className="IconsFont">close</i></button>
             </div>
             <div className='tracks'>
-                {props.playlist.tracks.map((t: any, i: number) => <PlaylistRecord key={i} track={t} onAdd={props.onAdd} />)}
+                {props.playlist.tracks 
+                    ? props.playlist.tracks.map((t: any, i: number) => <PlaylistRecord key={i} track={t} onAdd={props.onAdd} />)
+                    : null
+                }
             </div>
         </div>
     );

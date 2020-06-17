@@ -6,6 +6,7 @@ import { API, Form, PlaylistsContainer, MusicPlayer } from '@Yandex.DJ/service-c
 
 export interface MusicPlayerFormProps {
     playlists: any[],
+    playlist: {},
     currentPlaylist: any
 }
 
@@ -14,11 +15,14 @@ const MusicPlayerForm = (props: MusicPlayerFormProps) => {
         <Form>
             <PlaylistsContainer
                 playlists={props.playlists}
+                playlist={props.playlist}
+                onOpenPlaylist={API.getPlaylist}
                 onAdd={API.addToPlaylist}
                 onAddAll={API.addAllToPlaylist}
             />
             <MusicPlayer 
                 tracks={props.currentPlaylist}
+                onGetSongLink={API.getSongLink}
                 onChangeSong={API.changeCurrentSong}
             />
         </Form>

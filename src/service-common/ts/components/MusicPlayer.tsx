@@ -6,20 +6,20 @@ import "react-jinke-music-player/assets/index.css";
 
 export interface MusicPlayerFormProps {
     tracks: any[],
+    onGetSongLink?: (type: string, id: string) => string
     onChangeSong?: (songName: string) => void
 }
 
 const MusicPlayer = (props: MusicPlayerFormProps) => {
     let audioLists = []
     if (props.tracks)
-        audioLists = props.tracks.map((t: any, i: number) => {
+        audioLists = props.tracks.map((t: any) => {
             return {
-                index: t.index,
-                name: t.name,
-                singer: t.singer,
+                name: t.title,
+                singer: t.artist,
                 cover: t.cover,
                 musicSrc: () =>
-                    fetch(`api/yandexmusic/track?key=${t.key}`)
+                    fetch(props.onGetSongLink(t.type, t.id))
                         .then(data => data.text())
                         .then(link => link)
             }

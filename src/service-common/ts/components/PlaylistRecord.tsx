@@ -8,7 +8,7 @@ export interface PlaylistRecordProps {
 const PlaylistRecord = (props: PlaylistRecordProps) => {
     return (
         <div className='PlaylistRecord'>
-            <div className='title'>{props.track.singer} - {props.track.name}</div>
+            <div className='title'>{props.track.artist} - {props.track.title}</div>
             <button className='icon-button' onClick={() => props.onAdd(props.track)}><i className="IconsFont">plus</i></button>
         </div>
     );
