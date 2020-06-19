@@ -9,6 +9,7 @@ import PlaylistRecord from './components/PlaylistRecord';
 
 import Form from './compound-components/Form';
 import Playlist from './compound-components/Playlist';
+import PlaylistsGroup from './compound-components/PlaylistsGroup';
 import PlaylistsContainer from './compound-components/PlaylistsContainer';
 
 import { MusicPlayerFormContainer as MusicPlayerForm } from './containers/MusicPlayerFormContainer';
@@ -18,7 +19,7 @@ export {
     
     MusicPlayer, PlaylistRecord, 
     
-    Form, Playlist, PlaylistCover, PlaylistsContainer,
+    Form, Playlist, PlaylistCover, PlaylistsGroup, PlaylistsContainer,
 
     MusicPlayerForm
 }

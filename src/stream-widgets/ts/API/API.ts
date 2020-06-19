@@ -19,5 +19,14 @@ export const API = {
     },
     removeSocketHandler: (event: string, handler: (data: any) => void) => {
         socketClient.removeHandler(event, handler);
-    }
+    },
+    onSocketConnect: (handler: () => void) => {
+        socketClient.onConnect(handler);
+    },
+    socketSend: (event: string, data: any) => {
+        socketClient.send({
+            event: event,
+            data: data
+        })
+    }    
 }

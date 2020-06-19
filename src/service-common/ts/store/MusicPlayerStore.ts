@@ -1,7 +1,7 @@
 import { configureStore, getReducer } from '@yandex.dj/common';
 
 let initialState = {
-    playlists: [],
+    groups: [],
     playlist: {},
     currentPlaylist: []
 }

@@ -13,9 +13,12 @@ export const API = {
                 if (!data || data.isError)
                     return;
 
-                Actions.getPlaylists(`playlists`, data);
+                Actions.getPlaylists(`groups`, data);
             })
     },
+    updatePlaylists: (type: string) => {
+        return get(getPath(`playlists/update?type=${type}`));
+    },    
     getPlaylist: (type: string, id: string) => {
         return get(getPath(`playlist?type=${type}&id=${id}`))
             .then((data: any) => {
@@ -27,10 +30,6 @@ export const API = {
     },
     getSongLink: (type: string, id: string) => {
         return getPath(`track?type=${type}&id=${id}`);
-        /*get(getPath(`track?type=${type}&id=${id}`))
-            .then(data => data.text())
-            .then(link => link)
-            */;
     },
     addToPlaylist: (track: any) => {
         Actions.addTrack(`currentPlaylist`, [track]);

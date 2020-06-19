@@ -7,6 +7,8 @@
     width: 100vw;
     height: calc(100vh - 96px);
 
+    padding: 16px;
+
     left: 0;
     top: 0;
 
@@ -30,6 +32,8 @@
 
             align-items: center;
             justify-content: center;
+
+            @import './coverContainer';
 
             .title {
                 @extend %headline1;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import { PlaylistCover, Playlist } from '@Yandex.DJ/service-common';
+import { Playlist, PlaylistsGroup } from '@Yandex.DJ/service-common';
 
 export interface PlaylistsContainerProps {
-    playlists?: any[]
+    groups: any[]
     playlist: any,
+    onUpdatePlaylists: (type: string) => void,
     onOpenPlaylist: (type: string, id: string) => Promise<void>,
     onAdd?: (track: any) => void,
     onAddAll?: (track: any[]) => void
@@ -20,12 +21,14 @@ const PlaylistsContainer = (props: PlaylistsContainerProps) => {
 
     return (
         <div className='PlaylistsContainer'>
-            {props.playlists
-                ? props.playlists.map((p: any, i: number) =>
-                    <PlaylistCover
+            {props.groups
+                ? props.groups.map((g: any, i: number) =>
+                    <PlaylistsGroup
                         key={i}
-                        playlist={p}
-                        onClick={() => showList(p.type, p.id)}
+                        type={g.group}
+                        playlists={g.playlists}
+                        onOpenPlaylist={showList}
+                        onUpdate={props.onUpdatePlaylists}
                     />)
                 : null
             }

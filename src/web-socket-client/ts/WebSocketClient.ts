@@ -76,6 +76,11 @@ export class WebSocketClient {
             this.socketHandlers[event] = this.socketHandlers[event].splice(index, 1);
     }
 
+    onConnect(handler: () => void) {
+        if (this.socket)
+            this.socket.addEventListener("open", handler);
+    }
+
     isConnected() {
         return this.socket && this.socket.readyState === this.socket.OPEN;
     }

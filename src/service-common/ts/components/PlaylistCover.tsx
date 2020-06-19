@@ -7,7 +7,9 @@ export interface PlaylistCoverProps extends React.HTMLAttributes<HTMLDivElement>
 const PlaylistCover = (props: PlaylistCoverProps) => {
     return (
         <div className='PlaylistCover'>
-            <img src={`${props.playlist.cover}`} onClick={props.onClick} />
+            <div className="coverContainer">
+                <img src={`${props.playlist.cover}`} onClick={props.onClick} />
+            </div>
             <div>{props.playlist.title}</div>
         </div>
     );

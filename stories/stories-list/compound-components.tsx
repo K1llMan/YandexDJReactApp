@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { PlaylistCover, PlaylistsContainer } from '@Yandex.Dj/service-common';
+import { PlaylistCover, PlaylistsGroup, PlaylistsContainer } from '@Yandex.Dj/service-common';
 import { WidgetsContainer } from '@Yandex.DJ/stream-widgets';
 
-import { playlists } from '../playlists';
+import { groups } from '../playlists';
 
 export default {
     order: 1,
@@ -12,12 +12,21 @@ export default {
         storiesOf('Compound components', module)
             .add('PlaylistCover', () =>
                 <PlaylistCover
-                    playlist={playlists[1]}
+                    playlist={groups[1].playlists[1]}
                 />
             )
+            .add('PlaylistGroup', () =>
+                <PlaylistsGroup
+                    type={groups[0].group}
+                    playlists={groups[0].playlists}
+                    onOpenPlaylist={() => new Promise(() => {})}
+                />
+            )            
             .add('PlaylistsContainer', () =>
                 <PlaylistsContainer
-                    playlists={playlists}
+                    groups={groups}
+                    playlist={groups[0].playlists[0]}
+                    onOpenPlaylist={() => new Promise(() => {})}
                 />
             )
             .add('WidgetsContainer', () =>

@@ -3,7 +3,7 @@ import MusicPlayerForm from "../forms/MusicPlayerForm";
 
 const mapStateToProps = (state: any, props: any) => {
     return {
-        playlists: state.playlists,
+        groups: state.groups,
         playlist: state.playlist,
         currentPlaylist: state.currentPlaylist
     };

@@ -1,0 +1,19 @@
+.PlaylistsGroup {
+    display: flex;
+    flex-flow: column;
+
+    padding: 16px;
+
+    .header {
+        display: flex;
+        @extend %headline2;
+
+        button {
+            margin-left: auto;
+        }
+    }
+
+    .content {
+        display: flex;    
+    }
+}

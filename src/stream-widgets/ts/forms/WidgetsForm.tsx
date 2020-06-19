@@ -18,10 +18,14 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     if (!API.isSocketConnected())
         API.socketConnect();
 
+    // Формирование обработчиков
     API.addSocketHandler('updateSong', (data: any) => {
         Actions.updateFromSocket('currentSong', data);
         console.log(`Новая песня: ${data}`)
-    })
+    });
+
+    // Получение данных при соединении с сервисом
+    API.onSocketConnect(() => API.socketSend('getCurrentSong', []));
 
     return (
         <WidgetsContainer>
