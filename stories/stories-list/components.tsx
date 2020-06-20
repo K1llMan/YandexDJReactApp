@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { MusicPlayer, PlaylistRecord } from '@Yandex.Dj/service-common';
-import { Widget, SongWidget } from '@Yandex.Dj/stream-widgets';
+import { Widget, SongWidget, SoundPlayerWidget } from '@Yandex.Dj/stream-widgets';
 
 import { playlists } from '../playlists';
 
@@ -40,6 +40,16 @@ export default {
                         song='Test'
                     />
                 </div>
-            )            
+            )
+            .add('SoundPlayerWidget', () =>
+                <div style={{ width: `1000px`, height: `500px` }}>
+                    <SoundPlayerWidget
+                        left={10}
+                        top={10}
+                        width={30}
+                        height={10}
+                    />
+                </div>
+            )             
     }
 }

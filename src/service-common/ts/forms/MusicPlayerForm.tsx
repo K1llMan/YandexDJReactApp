@@ -18,13 +18,13 @@ const MusicPlayerForm = (props: MusicPlayerFormProps) => {
                 playlist={props.playlist}
                 onUpdatePlaylists={(type: string) => {
                     API.updatePlaylists(type)
-                    .then(() => API.getPlaylists())
+                        .then(() => API.getPlaylists())
                 }}
                 onOpenPlaylist={API.getPlaylist}
                 onAdd={API.addToPlaylist}
                 onAddAll={API.addAllToPlaylist}
             />
-            <MusicPlayer 
+            <MusicPlayer
                 tracks={props.currentPlaylist}
                 onGetSongLink={API.getSongLink}
                 onChangeSong={API.changeCurrentSong}
