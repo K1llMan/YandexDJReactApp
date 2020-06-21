@@ -8,10 +8,12 @@ import { WidgetsStore, WidgetsContainer } from '@Yandex.DJ/stream-widgets';
 
 import { API } from '../API/API';
 import SongWidget from '../components/SongWidget';
+import SoundPlayerWidget from '../components/SoundPlayerWidget';
 
 
 export interface WidgetsFormProps extends React.HTMLAttributes<HTMLDivElement> {
-    currentSong: string
+    currentSong: string,
+    speech: string
 }
 
 const WidgetsForm = (props: WidgetsFormProps) => {
@@ -21,8 +23,11 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     // Формирование обработчиков
     API.addSocketHandler('updateSong', (data: any) => {
         Actions.updateFromSocket('currentSong', data);
-        console.log(`Новая песня: ${data}`)
     });
+
+    API.addSocketHandler('speech', (data: any) => {
+        Actions.updateFromSocket('speech', `api/content/speech?id=${data}`);
+    });    
 
     // Получение данных при соединении с сервисом
     API.onSocketConnect(() => API.socketSend('getCurrentSong', []));
@@ -30,6 +35,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     return (
         <WidgetsContainer>
             <SongWidget left={0} top={90} width={30} height={10} song={props.currentSong} />
+            <SoundPlayerWidget left={0} top={90} width={30} height={10} speech={props.speech} onPlayEnded={API.clearSpeech}/>
         </WidgetsContainer>
     );
 };

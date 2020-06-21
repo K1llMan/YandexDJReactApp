@@ -1,3 +1,4 @@
+import { Actions } from '../actions/WidgetsActions';
 import { WebSocketClient } from '@yandex.dj/web-socket-client'; 
 
 let getPath = (path: string) => `ws://${window.location.host}/${path}`;
@@ -28,5 +29,8 @@ export const API = {
             event: event,
             data: data
         })
-    }    
+    },
+    clearSpeech: () => {
+        Actions.clearSpeech('speech', '');
+    }
 }
