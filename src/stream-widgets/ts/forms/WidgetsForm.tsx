@@ -26,8 +26,12 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     });
 
     API.addSocketHandler('speech', (data: any) => {
-        Actions.updateFromSocket('speech', `api/content/speech?id=${data}`);
-    });    
+        Actions.updateFromSocket('sound', `api/content/speech?id=${data}`);
+    });
+
+    API.addSocketHandler('sound', (data: any) => {
+        Actions.updateFromSocket('sound', `api/content/sound?id=${data}`);
+    });  
 
     // Получение данных при соединении с сервисом
     API.onSocketConnect(() => API.socketSend('getCurrentSong', []));
@@ -35,7 +39,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     return (
         <WidgetsContainer>
             <SongWidget left={0} top={90} width={30} height={10} song={props.currentSong} />
-            <SoundPlayerWidget left={0} top={90} width={30} height={10} speech={props.speech} onPlayEnded={API.clearSpeech}/>
+            <SoundPlayerWidget left={0} top={90} width={30} height={10} speech={props.speech} onPlayEnded={API.clearSound}/>
         </WidgetsContainer>
     );
 };

@@ -30,7 +30,7 @@ export const API = {
             data: data
         })
     },
-    clearSpeech: () => {
-        Actions.clearSpeech('speech', '');
+    clearSound: () => {
+        Actions.clearSpeech('sound', '');
     }
 }

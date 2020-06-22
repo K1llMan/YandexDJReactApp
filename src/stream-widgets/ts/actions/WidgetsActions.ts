@@ -7,7 +7,7 @@ const functionBindings = {
     // Обновления данных из сокета
     updateFromSocket: ActionTypes.UPDATE_FROM_SOCKET,
     // Очистка речи
-    clearSpeech: ActionTypes.CLEAR_SPEECH,
+    clearSound: ActionTypes.CLEAR_SOUND,
 };
 
 export const Actions = getActions(WidgetsStore, functionBindings);

@@ -2,12 +2,12 @@ import { configureStore, getReducer } from '@yandex.dj/common';
 
 let initialState = {
     currentSong: 'Test',
-    speech: ''
+    sound: ''
 }
 
 export const ActionTypes = {
     UPDATE_FROM_SOCKET: 'UPDATE_FROM_SOCKET',
-    CLEAR_SPEECH: 'CLEAR_SPEECH',
+    CLEAR_SOUND: 'CLEAR_SOUND',
 };
 
 const WidgetsStore = configureStore(getReducer(ActionTypes), initialState, null);
