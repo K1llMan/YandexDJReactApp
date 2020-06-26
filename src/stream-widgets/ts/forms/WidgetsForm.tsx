@@ -12,8 +12,9 @@ import SoundPlayerWidget from '../components/SoundPlayerWidget';
 
 
 export interface WidgetsFormProps extends React.HTMLAttributes<HTMLDivElement> {
+    scheme: any[],
     currentSong: string,
-    speech: string
+    sound: string
 }
 
 const WidgetsForm = (props: WidgetsFormProps) => {
@@ -31,15 +32,53 @@ const WidgetsForm = (props: WidgetsFormProps) => {
 
     API.addSocketHandler('sound', (data: any) => {
         Actions.updateFromSocket('sound', `api/content/sound?id=${data}`);
-    });  
+    });
+
+    API.addSocketHandler('scheme', (data: any) => {
+        Actions.updateFromSocket('scheme', data);
+    });    
 
     // Получение данных при соединении с сервисом
     API.onSocketConnect(() => API.socketSend('getCurrentSong', []));
 
+    /**
+     * Создание виджета
+     * @param widgetData Параметры виджета
+     * @param i Ключ
+     */
+    let getWidget = (widgetData: any, i: number) => {
+        switch (widgetData.type) {
+            case 'song': {
+                return <SongWidget
+                    key={i}
+                    left={widgetData.left}
+                    top={widgetData.top}
+                    width={widgetData.width}
+                    height={widgetData.height}
+                    song={props.currentSong}
+                />
+            }
+            case 'soundPlayer': {
+                return <SoundPlayerWidget
+                    key={i}
+                    left={widgetData.left}
+                    top={widgetData.top}
+                    width={widgetData.width}
+                    height={widgetData.height}
+                    sound={props.sound}
+                    onPlayEnded={API.clearSound}
+                />
+            }
+        }
+    }
+
+    let getWidgets = () => {
+        return props.scheme.map((data: any, i: number) => getWidget(data, i));
+    }
+
     return (
         <WidgetsContainer>
-            <SongWidget left={0} top={90} width={30} height={10} song={props.currentSong} />
-            <SoundPlayerWidget left={0} top={90} width={30} height={10} speech={props.speech} onPlayEnded={API.clearSound}/>
+            {getWidgets()}
         </WidgetsContainer>
     );
 };

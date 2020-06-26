@@ -1,3 +1,5 @@
+import { API } from './API/API';
+
 import WidgetsStore from './store/WidgetsStore';
 
 import Widget from './components/Widget';
@@ -8,7 +10,9 @@ import WidgetsContainer from './compound-components/WidgetsContainer';
 
 import { WidgetsFormContainer } from './containers/WidgetsFormContainer';
 
-export { 
+export {
+    API,
+
     WidgetsStore,
 
     Widget, SongWidget, SoundPlayerWidget,

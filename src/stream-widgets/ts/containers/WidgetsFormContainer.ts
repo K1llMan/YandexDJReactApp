@@ -3,8 +3,9 @@ import WidgetsForm from "../forms/WidgetsForm";
 
 const mapStateToProps = (state: any, props: any) => {
     return {
+        scheme: state.scheme,
         currentSong: state.currentSong,
-        speech: state.sound
+        sound: state.sound
     };
 };
 

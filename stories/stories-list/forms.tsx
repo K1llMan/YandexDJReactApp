@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { API, MusicPlayerStore, MusicPlayerForm } from '@Yandex.Dj/service-common';
-import { WidgetsStore, WidgetsForm } from '@Yandex.Dj/stream-widgets';
+import { API as WidgetsAPI, WidgetsStore, WidgetsForm } from '@Yandex.Dj/stream-widgets';
 
 import { Provider } from 'react-redux';
 
@@ -20,6 +20,8 @@ export default {
                 )
             })
             .add('WidgetsContainer', () => {
+                WidgetsAPI.getSchema();
+                
                 return (
                     <Provider store={WidgetsStore}>
                         <WidgetsForm />

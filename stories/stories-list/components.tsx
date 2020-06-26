@@ -48,7 +48,7 @@ export default {
                         top={10}
                         width={30}
                         height={10}
-                        speech='api/content/speech?id=qjqrrr1x.i0z'
+                        sound='api/content/speech?id=qjqrrr1x.i0z'
                     />
                 </div>
             )             

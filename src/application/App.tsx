@@ -3,26 +3,8 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { API, MusicPlayerStore, MusicPlayerForm, Form } from '@Yandex.DJ/service-common';
-import { WidgetsStore, WidgetsForm } from '@Yandex.DJ/stream-widgets';
-
-/*
-    <Route exact path='/' component={Home} />
-    <Route path='/counter' component={Counter} />
-*/
-
-/*
-        
-    <React.Fragment>
-        <div className='top'></div>
-        
-        <Provider store={MusicPlayerStore}>
-            <MusicPlayerForm />
-        </Provider>
-
-        <div className='bottom'></div>
-    </React.Fragment>
-*/
+import { API, MusicPlayerStore, MusicPlayerForm } from '@Yandex.DJ/service-common';
+import { API as WidgetsAPI, WidgetsStore, WidgetsForm } from '@Yandex.DJ/stream-widgets';
 
 // Список компонентов и путей
 let routes = [
@@ -36,10 +18,13 @@ let routes = [
         }
     },
     {
-        path: '/stream', component: () =>
-            <Provider store={WidgetsStore}>
+        path: '/stream', component: () => {
+            WidgetsAPI.getSchema();
+
+            return (<Provider store={WidgetsStore}>
                 <WidgetsForm />
-            </Provider>
+            </Provider>)
+        }
     },
 ]
 
