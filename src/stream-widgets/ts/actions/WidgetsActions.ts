@@ -9,7 +9,9 @@ const functionBindings = {
     // Очистка речи
     clearSound: ActionTypes.CLEAR_SOUND,
     // Обновление схемы виджетов
-    updateScheme: ActionTypes.UPDATE_SCHEME
+    updateScheme: ActionTypes.UPDATE_SCHEME,
+    // Изменение размера виджета
+    resizeWidget: ActionTypes.RESIZE_WIDGET
 };
 
 export const Actions = getActions(WidgetsStore, functionBindings);

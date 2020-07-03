@@ -6,7 +6,8 @@ export const groups = [
                 "id": "0",
                 "type": "Local",
                 "cover": "api/content/playlistCover?id=0",
-                "title": "Test playlist"
+                "title": "Test playlist",
+                "tracks": []
             }
         ]
     },

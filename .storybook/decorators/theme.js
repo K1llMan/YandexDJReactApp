@@ -1,14 +1,14 @@
 import React from "react";
 import { addDecorator } from "@storybook/react";
-import { select, color, text } from '@storybook/addon-knobs';
 
+import '../css/themes.css';
 import '@Yandex.Dj/service-common/scss/root.scss';
 
 export default {
     order: 1,
     add: () => addDecorator((story) => {
         return (
-            <div className={`theme`}>
+            <div style={{ overflow: 'hidden' }}>
                 {story()}
             </div>
         )

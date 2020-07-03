@@ -1,3 +1,5 @@
+import { WidgetsStore } from '@Yandex.DJ/stream-widgets';
+
 import { get, post, makePath } from '@yandex.dj/common';
 import { WebSocketClient } from '@yandex.dj/web-socket-client'; 
 
@@ -44,5 +46,15 @@ export const API = {
     },
     clearSound: () => {
         Actions.clearSpeech('sound', '');
+    },
+    resizeWidget: (i: number, width: number, height: number) => {
+        let widgetData = WidgetsStore.getState().scheme[i];
+        let newData = {
+            ...widgetData,
+            width: width,
+            height: height
+        }
+
+        Actions.resizeWidget(`scheme.${i}`, newData);
     }
 }

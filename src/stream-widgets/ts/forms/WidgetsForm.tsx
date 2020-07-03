@@ -56,6 +56,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
                     width={widgetData.width}
                     height={widgetData.height}
                     song={props.currentSong}
+                    onResize={(width: number, height: number) => API.resizeWidget(i, width, height)}
                 />
             }
             case 'soundPlayer': {
@@ -67,6 +68,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
                     height={widgetData.height}
                     sound={props.sound}
                     onPlayEnded={API.clearSound}
+                    onResize={(width: number, height: number) => API.resizeWidget(i, width, height)}
                 />
             }
         }

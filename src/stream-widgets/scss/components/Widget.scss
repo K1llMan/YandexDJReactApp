@@ -1,7 +1,8 @@
 .Widget {
     display: flex;
+    position: absolute !important;
 
-    position: absolute;
+    overflow: hidden;
 
     background-color: red;
 }
