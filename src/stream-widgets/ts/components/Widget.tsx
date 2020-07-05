@@ -1,42 +1,39 @@
 import React from 'react';
-import { Resizable, ResizeDirection } from 're-resizable';
+import { Rnd, DraggableData } from 'react-rnd';
 
 import { combineClassNames } from '@yandex.dj/common'
 
 export interface WidgetProps extends React.HTMLAttributes<HTMLDivElement> {
-    left: number,
-    top: number,
+    x: number,
+    y: number,
     width: number,
     height: number,
-    onResize?: (width: number, height: number) => void
-}
-
-let getPercentResize = (elementRef: HTMLElement, delta: any) => {
-    let parent: HTMLElement = elementRef.parentElement;
-    return {
-        width: delta.width / parent.offsetWidth * 100,
-        height: delta.height / parent.offsetHeight * 100
-    }
+    onResize?: (width: number, height: number) => void,
+    onDragEnds?: (x: number, y: number) => void,
 }
 
 const Widget = (props: WidgetProps) => {
     let onResizeStop = (event: MouseEvent | TouchEvent, direction: string, ref: HTMLElement, delta: any) => {
-        if (props.onResize) {
-            let resize = getPercentResize(ref, delta);
-            props.onResize(Math.min(props.width + resize.width, 100), Math.min(props.height + resize.height, 100));
-        }
+        if (props.onResize)
+            props.onResize(props.width + delta.width, props.height + delta.height);
     };
 
+    let onDragStop = (event: MouseEvent | TouchEvent, data: DraggableData) => {
+        if (props.onDragEnds)
+            props.onDragEnds(data.x, data.y);
+    }
+
     return (
-        <Resizable 
-            size={{ width: `${props.width}%`, height: `${props.height}%` }}
+        <Rnd
+            position={{ x: props.x, y: props.y }}
+            size={{ width: props.width, height: props.height }}
             className={combineClassNames(['Widget', props.className])}
-            style={{ left: `${props.left}%`, top: `${props.top}%` }}
-            onResizeStop={onResizeStop}            
+            onResizeStop={onResizeStop}
+            onDragStop={onDragStop}
+            bounds='parent'
         >
             {props.children}
-        </Resizable>
-
+        </Rnd>
     );
 };
 

@@ -8,7 +8,10 @@ export interface SongWidgetProps extends WidgetProps {
 
 const SongWidget = (props: SongWidgetProps) => {
     return (
-        <Widget className='SongWidget' top={props.top} left={props.left} width={props.width} height={props.height} onResize={props.onResize}>
+        <Widget
+            className='SongWidget'
+            {...props}
+        >
             <div className='title'>{props.song}</div>
         </Widget>
     );

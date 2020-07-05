@@ -11,7 +11,9 @@ const functionBindings = {
     // Обновление схемы виджетов
     updateScheme: ActionTypes.UPDATE_SCHEME,
     // Изменение размера виджета
-    resizeWidget: ActionTypes.RESIZE_WIDGET
+    resizeWidget: ActionTypes.RESIZE_WIDGET,
+    // Перетаскивание виджета
+    dragWidget: ActionTypes.DRAG_WIDGET
 };
 
 export const Actions = getActions(WidgetsStore, functionBindings);

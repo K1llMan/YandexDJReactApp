@@ -36,7 +36,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
 
     API.addSocketHandler('scheme', (data: any) => {
         Actions.updateFromSocket('scheme', data);
-    });    
+    });
 
     // Получение данных при соединении с сервисом
     API.onSocketConnect(() => API.socketSend('getCurrentSong', []));
@@ -47,28 +47,28 @@ const WidgetsForm = (props: WidgetsFormProps) => {
      * @param i Ключ
      */
     let getWidget = (widgetData: any, i: number) => {
+        let commonProps = {
+            key: i,
+            x: widgetData.x,
+            y: widgetData.y,
+            width: widgetData.width,
+            height: widgetData.height,
+            onResize: (width: number, height: number) => API.resizeWidget(i, width, height),
+            onDragEnds: (x: number, y: number) => API.dragWidget(i, x, y)
+        }
+
         switch (widgetData.type) {
             case 'song': {
                 return <SongWidget
-                    key={i}
-                    left={widgetData.left}
-                    top={widgetData.top}
-                    width={widgetData.width}
-                    height={widgetData.height}
+                    {...commonProps}
                     song={props.currentSong}
-                    onResize={(width: number, height: number) => API.resizeWidget(i, width, height)}
                 />
             }
             case 'soundPlayer': {
                 return <SoundPlayerWidget
-                    key={i}
-                    left={widgetData.left}
-                    top={widgetData.top}
-                    width={widgetData.width}
-                    height={widgetData.height}
+                    {...commonProps}
                     sound={props.sound}
                     onPlayEnded={API.clearSound}
-                    onResize={(width: number, height: number) => API.resizeWidget(i, width, height)}
                 />
             }
         }

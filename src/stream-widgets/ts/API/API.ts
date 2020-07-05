@@ -56,5 +56,15 @@ export const API = {
         }
 
         Actions.resizeWidget(`scheme.${i}`, newData);
-    }
+    },
+    dragWidget: (i: number, x: number, y: number) => {
+        let widgetData = WidgetsStore.getState().scheme[i];
+        let newData = {
+            ...widgetData,
+            x: x,
+            y: y
+        }
+
+        Actions.dragWidget(`scheme.${i}`, newData);
+    },
 }

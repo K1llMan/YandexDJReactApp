@@ -5,15 +5,15 @@ let initialState = {
     [
         {
             type: 'song',
-            left: 0,
-            top: 90,
+            x: 0,
+            y: 90,
             height: 10,
             width: 30
         },
         {
             type: 'soundPlayer',
-            left: 30,
-            top: 50,
+            x: 30,
+            y: 50,
             height: 10,
             width: 30
         }
@@ -27,6 +27,7 @@ export const ActionTypes = {
     CLEAR_SOUND: 'CLEAR_SOUND',
     UPDATE_SCHEME: 'UPDATE_SCHEME',
     RESIZE_WIDGET: 'RESIZE_WIDGET',
+    DRAG_WIDGET: 'DRAG_WIDGET'
 };
 
 const WidgetsStore = configureStore(getReducer(ActionTypes), initialState, null);
