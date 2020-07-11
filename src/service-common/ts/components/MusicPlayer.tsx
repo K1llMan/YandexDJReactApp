@@ -24,9 +24,12 @@ const MusicPlayer = (props: MusicPlayerFormProps) => {
                 singer: t.artist,
                 cover: t.cover,
                 gain: t.gain,
-                musicSrc: () =>
-                    fetch(props.onGetSongLink(t.type, t.id))
-                        .then(data => data.text())
+                musicSrc: () => {
+                    if (props.onGetSongLink)
+                        return fetch(props.onGetSongLink(t.type, t.id))
+                            .then(data => data.text());
+                    return new Promise(() => '');
+                }
             }
         });
 

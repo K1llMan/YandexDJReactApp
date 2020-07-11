@@ -41,5 +41,17 @@ export const API = {
         post(getPath('currentSong'), {
             name: songName
         });
+    },
+    getSchemes: () => {
+        get(getPath('schemes'))
+            .then((data: any) => {
+                if (!data || data.isError)
+                    return;
+
+                Actions.addSchemes(`schemes`, data);                
+            })
+    },
+    setScheme: (scheme: any) => {
+        post(getPath('scheme'), scheme);
     }
 }

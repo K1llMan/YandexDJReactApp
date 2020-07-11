@@ -1,0 +1,15 @@
+.SchemeRecord {
+    display: flex;
+
+    padding: 0 8px;
+    
+    @extend %title2;
+
+    .title {
+        margin-right: 16px;
+    }
+
+    button {
+        margin-left: auto;
+    }
+}

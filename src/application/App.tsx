@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { API, MusicPlayerStore, MusicPlayerForm } from '@Yandex.DJ/service-common';
+import { API, MusicPlayerStore, TabsForm } from '@Yandex.DJ/service-common';
 import { API as WidgetsAPI, WidgetsStore, WidgetsForm } from '@Yandex.DJ/stream-widgets';
 
 // Список компонентов и путей
@@ -11,9 +11,10 @@ let routes = [
     {
         path: '/', component: () => {
             API.getPlaylists();
+            API.getSchemes();
 
             return (<Provider store={MusicPlayerStore}>
-                <MusicPlayerForm />
+                <TabsForm />
             </Provider>)
         }
     },

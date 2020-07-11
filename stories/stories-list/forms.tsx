@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { API, MusicPlayerStore, MusicPlayerForm } from '@Yandex.Dj/service-common';
+import { API, MusicPlayerStore, MusicPlayerForm, TabsForm } from '@Yandex.Dj/service-common';
 import { API as WidgetsAPI, WidgetsStore, WidgetsForm } from '@Yandex.Dj/stream-widgets';
 
 import { Provider } from 'react-redux';
@@ -19,9 +19,17 @@ export default {
                     </Provider>
                 )
             })
+            .add('TabsForm', () => {
+                API.getPlaylists();
+                API.getSchemes();
+
+                return (
+                    <Provider store={MusicPlayerStore}>
+                        <TabsForm />
+                    </Provider>
+                )
+            })            
             .add('WidgetsContainer', () => {
-                WidgetsAPI.getSchema();
-                
                 return (
                     <Provider store={WidgetsStore}>
                         <WidgetsForm />

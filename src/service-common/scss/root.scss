@@ -3,12 +3,16 @@
 @import './common/IconsFont';
 
 @import './components/PlaylistRecord';
+@import './components/SchemeRecord';
 
 @import './compound-components/Form';
 @import './compound-components/Playlist';
 @import './compound-components/PlaylistCover';
 @import './compound-components/PlaylistsGroup';
 @import './compound-components/PlaylistsContainer';
+@import './compound-components/SchemesList';
+
+@import './forms/SchemeForm';
 
 body {
     margin: 0;
