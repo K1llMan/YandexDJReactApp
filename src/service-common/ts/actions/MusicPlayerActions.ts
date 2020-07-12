@@ -14,6 +14,12 @@ const functionBindings = {
     addSchemes: ActionTypes.ADD_SCHEMES,
     // Добавление текущей схемы
     addCurrentScheme: ActionTypes.ADD_CURRENT_SCHEME,
+    // Смена размера виджета
+    resizeWidget: ActionTypes.RESIZE_WIDGET,
+    // Перетаскивание виджета
+    dragWidget: ActionTypes.DRAG_WIDGET,
+    // Включение полноэкранного режима
+    setFullscreen: ActionTypes.SET_FULLSCREEN
 };
 
 export const Actions = getActions(MusicPlayerStore, functionBindings);

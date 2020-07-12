@@ -5,7 +5,8 @@ let initialState = {
     playlist: {},
     currentPlaylist: [],
     schemes: [],
-    scheme: {}
+    scheme: -1,
+    fullscreen: false
 }
 
 export const ActionTypes = {
@@ -13,7 +14,10 @@ export const ActionTypes = {
     GET_PLAYLIST: 'GET_PLAYLIST',
     ADD_TRACK: 'ADD_TRACK',
     ADD_SCHEMES: 'ADD_SCHEMES',
-    ADD_CURRENT_SCHEME: 'ADD_CURRENT_SCHEME'
+    ADD_CURRENT_SCHEME: 'ADD_CURRENT_SCHEME',
+    RESIZE_WIDGET: 'RESIZE_WIDGET',
+    DRAG_WIDGET: 'DRAG_WIDGET',
+    SET_FULLSCREEN: 'SET_FULLSCREEN'
 };
 
 const MusicPlayerStore = configureStore(getReducer(ActionTypes), initialState, null);

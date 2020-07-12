@@ -48,10 +48,36 @@ export const API = {
                 if (!data || data.isError)
                     return;
 
-                Actions.addSchemes(`schemes`, data);                
+                Actions.addSchemes(`schemes`, data);
             })
     },
     setScheme: (scheme: any) => {
+        Actions.addCurrentScheme(`scheme`, scheme);
+    },
+    applyScheme: (scheme: any) => {
         post(getPath('scheme'), scheme);
+    },
+    resizeWidget: (schemeIndex: number, i: number, width: number, height: number) => {
+        let widgetData = MusicPlayerStore.getState().schemes[schemeIndex].widgets[i];
+        let newData = {
+            ...widgetData,
+            width: width,
+            height: height
+        }
+
+        Actions.resizeWidget(`schemes.${schemeIndex}.widgets.${i}`, newData);
+    },
+    dragWidget: (schemeIndex: number, i: number, x: number, y: number) => {
+        let widgetData = MusicPlayerStore.getState().schemes[schemeIndex].widgets[i];
+        let newData = {
+            ...widgetData,
+            x: x,
+            y: y
+        }
+
+        Actions.dragWidget(`schemes.${schemeIndex}.widgets.${i}`, newData);
+    },
+    setFullscreen: (enable: boolean) => {
+        Actions.setFullscreen(`fullscreen`, enable);
     }
 }

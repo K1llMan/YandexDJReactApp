@@ -7,7 +7,7 @@ export interface WidgetsContainerProps extends React.HTMLAttributes<HTMLDivEleme
 
 const WidgetsContainer = (props: WidgetsContainerProps) => {
     return (
-        <div className={combineClassNames(['WidgetsContainer', props.className])}>
+        <div className={combineClassNames(['WidgetsContainer', props.className])} style={props.style}>
             {props.children}
         </div>
     );

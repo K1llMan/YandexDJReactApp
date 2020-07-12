@@ -4,7 +4,8 @@ import SchemeForm from "../forms/SchemeForm";
 const mapStateToProps = (state: any, props: any) => {
     return {
         schemes: state.schemes,
-        scheme: state.scheme
+        scheme: state.scheme,
+        fullscreen: state.fullscreen
     };
 };
 
