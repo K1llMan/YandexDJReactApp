@@ -15,6 +15,9 @@ export interface SchemeFormProps {
 
 let getWidgetsContainerStyle = () => {
     return {
+        position: 'absolute',
+        top: 0,
+        left: 0,
         backgroundColor: 'green'
     }
 }
@@ -58,7 +61,7 @@ const SchemeForm = (props: SchemeFormProps) => {
                 <button onClick={() => API.setFullscreen(true)}>Полный экран</button>
             </div>
             <Fullscreen enabled={props.fullscreen} onChange={(enable: boolean) => API.setFullscreen(enable)}>
-                <WidgetsContainer style={{ ...getWidgetsContainerStyle(), display: props.fullscreen ? 'flex' : 'none' }}>
+                <WidgetsContainer style={{ ...getWidgetsContainerStyle(), visibility: props.fullscreen ? 'visible' : 'collapse' }}>
                     {props.schemes[props.scheme] && props.schemes[props.scheme].widgets
                         ? props.schemes[props.scheme].widgets.map((data: any, i: number) => getWidget(props.scheme, data, i))
                         : null

@@ -46,25 +46,5 @@ export const API = {
     },
     clearSound: () => {
         Actions.clearSpeech('sound', '');
-    },
-    resizeWidget: (i: number, width: number, height: number) => {
-        let widgetData = WidgetsStore.getState().scheme[i];
-        let newData = {
-            ...widgetData,
-            width: width,
-            height: height
-        }
-
-        Actions.resizeWidget(`scheme.${i}`, newData);
-    },
-    dragWidget: (i: number, x: number, y: number) => {
-        let widgetData = WidgetsStore.getState().scheme[i];
-        let newData = {
-            ...widgetData,
-            x: x,
-            y: y
-        }
-
-        Actions.dragWidget(`scheme.${i}`, newData);
-    },
+    }
 }

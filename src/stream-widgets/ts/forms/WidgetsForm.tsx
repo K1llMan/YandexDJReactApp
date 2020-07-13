@@ -55,9 +55,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
             x: widgetData.x,
             y: widgetData.y,
             width: widgetData.width,
-            height: widgetData.height,
-            onResize: (width: number, height: number) => API.resizeWidget(i, width, height),
-            onDragEnds: (x: number, y: number) => API.dragWidget(i, x, y)
+            height: widgetData.height
         }
 
         switch (widgetData.type) {
