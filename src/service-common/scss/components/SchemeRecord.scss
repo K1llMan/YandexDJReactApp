@@ -5,7 +5,14 @@
     
     @extend %title2;
 
-    .title {
+    border: 2px solid green;
+    margin: 2px;
+
+    &.active {
+        background-color: rgba($color: green, $alpha: 0.2);
+    }
+
+    > .title {
         margin-right: 16px;
     }
 

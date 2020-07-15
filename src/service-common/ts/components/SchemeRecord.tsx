@@ -1,8 +1,11 @@
 import React from 'react';
 
+import { combineClassNames } from '@Yandex.Dj/common';
+
 export interface SchemeRecordProps {
     schemeIndex: number,
     scheme: any,
+    active: boolean,
     onSelect?: (scheme: any) => void
     onApply?: (scheme: any) => void
 }
@@ -24,7 +27,7 @@ const SchemeRecord = (props: SchemeRecordProps) => {
     }
 
     return (
-        <div className='SchemeRecord' onClick={onSelect}>
+        <div className={combineClassNames(['SchemeRecord', props.active ? 'active' : ''])} onClick={onSelect}>
             <div className='title'>{props.scheme.name}</div>
             <button className='icon-button' onClick={apply}><i className="IconsFont">plus</i></button>
         </div>

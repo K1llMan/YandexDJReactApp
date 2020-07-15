@@ -4,7 +4,50 @@ let initialState = {
     groups: [],
     playlist: {},
     currentPlaylist: [],
-    schemes: [],
+    schemes: [
+        {
+            "name": "default",
+            "widgets": [
+                {
+                    "type": "song",
+                    "x": 0,
+                    "y": 980,
+                    "width": 500,
+                    "height": 100,
+                    "order":  0
+                },
+                {
+                    "type": "soundPlayer",
+                    "x": 0,
+                    "y": 0,
+                    "width": 500,
+                    "height": 100,
+                    "order":  0
+                }
+            ]
+        },
+        {
+            "name": "test",
+            "widgets": [
+                {
+                    "type": "song",
+                    "x": 0,
+                    "y": 980,
+                    "width": 500,
+                    "height": 100,
+                    "order":  0
+                },
+                {
+                    "type": "soundPlayer",
+                    "x": 0,
+                    "y": 0,
+                    "width": 500,
+                    "height": 100,
+                    "order":  0
+                }
+            ]
+        }        
+    ],
     scheme: -1,
     fullscreen: false
 }

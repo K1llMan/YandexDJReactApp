@@ -54,6 +54,7 @@ const SchemeForm = (props: SchemeFormProps) => {
         <Form className='SchemeForm'>
             <div className='list'>
                 <SchemesList
+                    scheme={props.scheme}
                     schemes={props.schemes}
                     onApply={(scheme: any) => API.applyScheme(scheme)}
                     onSelect={(scheme: any) => API.setScheme(scheme)}
