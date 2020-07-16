@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { SchemeRecord } from '@Yandex.DJ/service-common';
 
 export interface SchemesListProps {
     schemes?: any[],
     scheme?: number,
-    onSelect?: (scheme: any) => void
+    onSelect?: (scheme: number) => void
     onApply?: (scheme: any) => void
 }
 

@@ -18,6 +18,10 @@ const functionBindings = {
     resizeWidget: ActionTypes.RESIZE_WIDGET,
     // Перетаскивание виджета
     dragWidget: ActionTypes.DRAG_WIDGET,
+    // Добавление текущего виджета
+    addCurrentWidget: ActionTypes.ADD_CURRENT_WIDGET,
+    // Удаление виджета
+    removeWidget: ActionTypes.REMOVE_WIDGET,       
     // Включение полноэкранного режима
     setFullscreen: ActionTypes.SET_FULLSCREEN
 };

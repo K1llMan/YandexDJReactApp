@@ -11,7 +11,7 @@ let initialState = {
                 {
                     "type": "song",
                     "x": 0,
-                    "y": 980,
+                    "y": 800,
                     "width": 500,
                     "height": 100,
                     "order":  0
@@ -32,7 +32,7 @@ let initialState = {
                 {
                     "type": "song",
                     "x": 0,
-                    "y": 980,
+                    "y": 800,
                     "width": 500,
                     "height": 100,
                     "order":  0
@@ -49,6 +49,7 @@ let initialState = {
         }        
     ],
     scheme: -1,
+    widget: -1,
     fullscreen: false
 }
 
@@ -60,6 +61,8 @@ export const ActionTypes = {
     ADD_CURRENT_SCHEME: 'ADD_CURRENT_SCHEME',
     RESIZE_WIDGET: 'RESIZE_WIDGET',
     DRAG_WIDGET: 'DRAG_WIDGET',
+    ADD_CURRENT_WIDGET: 'ADD_CURRENT_WIDGET',
+    REMOVE_WIDGET: 'REMOVE_WIDGET',
     SET_FULLSCREEN: 'SET_FULLSCREEN'
 };
 

@@ -5,6 +5,7 @@ const mapStateToProps = (state: any, props: any) => {
     return {
         schemes: state.schemes,
         scheme: state.scheme,
+        widget: state.widget,
         fullscreen: state.fullscreen
     };
 };

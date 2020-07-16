@@ -4,12 +4,14 @@ import '../../scss/root.scss';
 
 import Fullscreen from 'react-full-screen';
 
-import { API, Form, SchemesList } from '@Yandex.DJ/service-common';
+import { API, Form, SchemesList, WidgetsList } from '@Yandex.DJ/service-common';
 import { WidgetsContainer, SongWidget, SoundPlayerWidget } from '@Yandex.DJ/stream-widgets';
+import WidgetParams from '../compound-components/WidgetParams';
 
 export interface SchemeFormProps {
     schemes: any[],
     scheme: number,
+    widget: number,
     fullscreen: boolean
 }
 
@@ -26,6 +28,7 @@ const SchemeForm = (props: SchemeFormProps) => {
     let getWidget = (schemeIndex: number, widgetData: any, i: number) => {
         let commonProps = {
             key: i,
+            editMode: true,
             x: widgetData.x,
             y: widgetData.y,
             width: widgetData.width,
@@ -52,15 +55,26 @@ const SchemeForm = (props: SchemeFormProps) => {
 
     return (
         <Form className='SchemeForm'>
+            <div className='toolbar'>
+                <button className='icon-button' onClick={API.getSchemes}><i className="IconsFont">refresh</i></button>
+                <button className='icon-button' onClick={() => API.setFullscreen(true)}><i className="IconsFont">fullscreen</i></button>
+            </div>
             <div className='list'>
                 <SchemesList
                     scheme={props.scheme}
                     schemes={props.schemes}
-                    onApply={(scheme: any) => API.applyScheme(scheme)}
-                    onSelect={(scheme: any) => API.setScheme(scheme)}
+                    onApply={API.applyScheme}
+                    onSelect={API.setScheme}
                 />
-                <button onClick={() => API.setFullscreen(true)}>Полный экран</button>
+                <WidgetsList
+                    scheme={props.scheme}
+                    widget={props.widget}
+                    schemeData={props.scheme > -1 ? props.schemes[props.scheme] : null}
+                    onSelect={API.setWidget}
+                    onRemove={API.removeWidget}
+                />
             </div>
+
             <Fullscreen enabled={props.fullscreen} onChange={(enable: boolean) => API.setFullscreen(enable)}>
                 <WidgetsContainer style={{ ...getWidgetsContainerStyle(), visibility: props.fullscreen ? 'visible' : 'collapse' }}>
                     {props.schemes[props.scheme] && props.schemes[props.scheme].widgets

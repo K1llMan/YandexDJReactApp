@@ -6,12 +6,14 @@ import MusicPlayer from './components/MusicPlayer';
 import PlaylistCover from './components/PlaylistCover';
 import PlaylistRecord from './components/PlaylistRecord';
 import SchemeRecord from './components/SchemeRecord';
+import WidgetRecord from './components/WidgetRecord';
 
 import Form from './compound-components/Form';
 import Playlist from './compound-components/Playlist';
 import PlaylistsGroup from './compound-components/PlaylistsGroup';
 import PlaylistsContainer from './compound-components/PlaylistsContainer';
 import SchemesList from './compound-components/SchemesList';
+import WidgetsList from './compound-components/WidgetsList';
 
 import TabsForm from './forms/TabsForm';
 
@@ -21,9 +23,9 @@ import { SchemeFormContainer as SchemeForm } from './containers/SchemeFormContai
 export { 
     MusicPlayerStore, API, 
     
-    MusicPlayer, PlaylistRecord, SchemeRecord,
+    MusicPlayer, PlaylistRecord, SchemeRecord, WidgetRecord,
     
-    Form, Playlist, PlaylistCover, PlaylistsGroup, PlaylistsContainer, SchemesList,
+    Form, Playlist, PlaylistCover, PlaylistsGroup, PlaylistsContainer, SchemesList, WidgetsList,
 
     MusicPlayerForm, SchemeForm, TabsForm
 }

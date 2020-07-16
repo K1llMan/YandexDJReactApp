@@ -1,5 +1,19 @@
 .SchemeForm {
-    .list {
-        width: 200px;
+    > .toolbar {
+        display: flex;
+
+        padding: 0 8px;
+
+        > * {
+            margin-right: 8px;
+        }
+    }
+
+    > .list {
+        display: flex;
+    }
+
+    > button {
+        display: flex;
     }
 }

@@ -1,0 +1,12 @@
+.WidgetsList {
+    display: flex;
+    flex-flow: column;
+
+    padding: 8px 0;
+
+    > .title {
+        padding: 0 8px;
+
+        @extend %title1;
+    }
+}

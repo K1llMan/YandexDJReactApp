@@ -25,11 +25,19 @@
   content: "\e000";
 }
 
-.IconsFont.plus:before {
+.IconsFont.done:before {
   content: "\e001";
 }
 
-.IconsFont.refresh:before {
+.IconsFont.fullscreen:before {
   content: "\e002";
+}
+
+.IconsFont.plus:before {
+  content: "\e003";
+}
+
+.IconsFont.refresh:before {
+  content: "\e004";
 }
 
