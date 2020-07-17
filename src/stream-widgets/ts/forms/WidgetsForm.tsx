@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
+import React from 'react';
 
 import '../../scss/root.scss';
 
 import { Actions } from '../actions/WidgetsActions';
-import { WidgetsStore, WidgetsContainer } from '@Yandex.DJ/stream-widgets';
+import { WidgetsContainer } from '@Yandex.DJ/stream-widgets';
 
 import { API } from '../API/API';
 import SongWidget from '../components/SongWidget';
@@ -52,10 +51,7 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     let getWidget = (widgetData: any, i: number) => {
         let commonProps = {
             key: i,
-            x: widgetData.x,
-            y: widgetData.y,
-            width: widgetData.width,
-            height: widgetData.height
+            ...widgetData
         }
 
         switch (widgetData.type) {
@@ -76,7 +72,9 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     }
 
     let getWidgets = () => {
-        return props.scheme.map((data: any, i: number) => getWidget(data, i));
+        return props.scheme
+            .filter((w: any) => w.visible)
+            .map((w: any, i: number) => getWidget(w, i));
     }
 
     return (

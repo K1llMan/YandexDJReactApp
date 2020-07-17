@@ -6,8 +6,9 @@ export interface WidgetsListProps {
     scheme: number,
     widget: number,
     schemeData: any,
-    onRemove?: (widget: number) => void,
     onSelect?: (widget: number) => void
+    onChangeVisibility?: (widget: number, visible: boolean) => void,
+    onRemove?: (widget: number) => void,
 }
 
 const WidgetsList = (props: WidgetsListProps) => {
@@ -23,6 +24,7 @@ const WidgetsList = (props: WidgetsListProps) => {
                         widgetIndex={i}
                         widget={w}
                         onSelect={props.onSelect}
+                        onChangeVisibility={props.onChangeVisibility}
                         onRemove={props.onRemove}
                     />)
                 : null

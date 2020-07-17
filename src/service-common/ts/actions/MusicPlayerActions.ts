@@ -21,7 +21,11 @@ const functionBindings = {
     // Добавление текущего виджета
     addCurrentWidget: ActionTypes.ADD_CURRENT_WIDGET,
     // Удаление виджета
-    removeWidget: ActionTypes.REMOVE_WIDGET,       
+    removeWidget: ActionTypes.REMOVE_WIDGET,
+    // Установка видимости виджета
+    setVisibility: ActionTypes.SET_WIDGET_VISIBILITY,
+    // Установка уровня виджета
+    setOrder: ActionTypes.SET_WIDGET_ORDER,
     // Включение полноэкранного режима
     setFullscreen: ActionTypes.SET_FULLSCREEN
 };

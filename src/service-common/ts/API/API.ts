@@ -93,6 +93,16 @@ export const API = {
 
         Actions.removeWidget(`schemes.${schemeIndex}`, scheme);
     },
+    setVisibility: (widget: number, visible: boolean) => {
+        let schemeIndex = MusicPlayerStore.getState().scheme;
+
+        Actions.setVisibility(`schemes.${schemeIndex}.widgets.${widget}.visible`, visible);
+    },
+    setOrder: (widget: number, order: number) => {
+        let schemeIndex = MusicPlayerStore.getState().scheme;
+
+        Actions.setOrder(`schemes.${schemeIndex}.widgets.${widget}.order`, order);
+    },          
     setFullscreen: (enable: boolean) => {
         Actions.setFullscreen(`fullscreen`, enable);
     }

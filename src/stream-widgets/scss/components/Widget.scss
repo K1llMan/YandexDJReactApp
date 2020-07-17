@@ -10,7 +10,18 @@
         position: absolute;
         display: flex;
 
+        background-color: white;
+        border-radius: 4px;
+
+        color: black;
+        text-shadow: none;
+
         top: 0;
         left: 0;
+
+        .order {
+            font-size: 24px;
+            line-height: 24px;
+        }
     }
 }

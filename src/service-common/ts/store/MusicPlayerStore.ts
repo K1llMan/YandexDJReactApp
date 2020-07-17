@@ -10,6 +10,7 @@ let initialState = {
             "widgets": [
                 {
                     "type": "song",
+                    "visible": true,
                     "x": 0,
                     "y": 800,
                     "width": 500,
@@ -18,6 +19,7 @@ let initialState = {
                 },
                 {
                     "type": "soundPlayer",
+                    "visible": true,
                     "x": 0,
                     "y": 0,
                     "width": 500,
@@ -31,6 +33,7 @@ let initialState = {
             "widgets": [
                 {
                     "type": "song",
+                    "visible": true,
                     "x": 0,
                     "y": 800,
                     "width": 500,
@@ -39,6 +42,7 @@ let initialState = {
                 },
                 {
                     "type": "soundPlayer",
+                    "visible": true,
                     "x": 0,
                     "y": 0,
                     "width": 500,
@@ -63,6 +67,8 @@ export const ActionTypes = {
     DRAG_WIDGET: 'DRAG_WIDGET',
     ADD_CURRENT_WIDGET: 'ADD_CURRENT_WIDGET',
     REMOVE_WIDGET: 'REMOVE_WIDGET',
+    SET_WIDGET_VISIBILITY: 'SET_WIDGET_VISIBILITY',
+    SET_WIDGET_ORDER: 'SET_WIDGET_ORDER',
     SET_FULLSCREEN: 'SET_FULLSCREEN'
 };
 

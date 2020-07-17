@@ -33,11 +33,23 @@
   content: "\e002";
 }
 
-.IconsFont.plus:before {
+.IconsFont.minus:before {
   content: "\e003";
 }
 
-.IconsFont.refresh:before {
+.IconsFont.plus:before {
   content: "\e004";
+}
+
+.IconsFont.refresh:before {
+  content: "\e005";
+}
+
+.IconsFont.visibility_off:before {
+  content: "\e006";
+}
+
+.IconsFont.visibility:before {
+  content: "\e007";
 }
 
