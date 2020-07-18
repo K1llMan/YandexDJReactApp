@@ -6,7 +6,6 @@ import Fullscreen from 'react-full-screen';
 
 import { API, Form, SchemesList, WidgetsList } from '@Yandex.DJ/service-common';
 import { WidgetsContainer, SongWidget, SoundPlayerWidget } from '@Yandex.DJ/stream-widgets';
-import WidgetParams from '../compound-components/WidgetParams';
 
 export interface SchemeFormProps {
     schemes: any[],

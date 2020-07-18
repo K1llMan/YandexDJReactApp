@@ -17,6 +17,6 @@ export function getGainController(sourceElement: HTMLMediaElement) {
 
     // Шкала на 60 Дб, усиление +/- 12
     return (gain: number) => {
-        gainNode.gain.value = 1 + 0.5 * (gain / 12);
+        gainNode.gain.value = 1 * (1 + 0.5 * (gain / 12));
     };
 }

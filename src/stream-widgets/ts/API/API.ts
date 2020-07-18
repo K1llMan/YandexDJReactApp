@@ -45,6 +45,6 @@ export const API = {
             });
     },
     clearSound: () => {
-        Actions.clearSpeech('sound', '');
+        Actions.clearSound('sound', '');
     }
 }

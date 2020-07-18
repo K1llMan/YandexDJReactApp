@@ -44,7 +44,7 @@ const Widget = (props: WidgetProps) => {
     let onChangeOrder = (order: number) => {
         if (props.onChangeOrder)
             props.onChangeOrder(order);
-    }    
+    }
 
     return (
         <Rnd
@@ -58,12 +58,15 @@ const Widget = (props: WidgetProps) => {
             onDragStop={onDragStop}
             bounds='parent'
         >
-            <div className='tools'>
-                <button className='icon-button' onClick={onChangeVisibility}><i className="IconsFont">{props.visible ? 'visibility' : 'visibility_off' } </i></button>
-                <button className='icon-button' onClick={() => onChangeOrder(props.order + 1)}><i className="IconsFont">plus</i></button>
-                <div className='order'>{props.order}</div>
-                <button className='icon-button' onClick={() => onChangeOrder(Math.max(0, props.order - 1))}><i className="IconsFont">minus</i></button>
-            </div>
+            { props.editMode
+                ? <div className='tools'>
+                    <button className='icon-button' onClick={onChangeVisibility}><i className="IconsFont">{props.visible ? 'visibility' : 'visibility_off'} </i></button>
+                    <button className='icon-button' onClick={() => onChangeOrder(props.order + 1)}><i className="IconsFont">plus</i></button>
+                    <div className='order'>{props.order}</div>
+                    <button className='icon-button' onClick={() => onChangeOrder(Math.max(0, props.order - 1))}><i className="IconsFont">minus</i></button>
+                </div>
+                : null
+            }
             {props.children}
         </Rnd>
     );

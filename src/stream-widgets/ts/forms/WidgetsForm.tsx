@@ -8,6 +8,7 @@ import { WidgetsContainer } from '@Yandex.DJ/stream-widgets';
 import { API } from '../API/API';
 import SongWidget from '../components/SongWidget';
 import SoundPlayerWidget from '../components/SoundPlayerWidget';
+import { batch } from 'react-redux';
 
 
 export interface WidgetsFormProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,7 +27,10 @@ const WidgetsForm = (props: WidgetsFormProps) => {
     });
 
     API.addSocketHandler('updateScheme', (data: any) => {
-        Actions.updateFromSocket('scheme', data.widgets);
+        batch(() => {
+            Actions.updateFromSocket('scheme', data.widgets);
+            API.clearSound();
+        });
     });    
 
     API.addSocketHandler('speech', (data: any) => {
