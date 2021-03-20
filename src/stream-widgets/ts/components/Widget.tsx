@@ -4,8 +4,8 @@ import { Rnd, DraggableData } from 'react-rnd';
 import { combineClassNames } from '@yandex.dj/common'
 
 export interface WidgetProps extends React.HTMLAttributes<HTMLDivElement> {
-    editMode: boolean,
-    visible: boolean,
+    editMode?: boolean,
+    visible?: boolean,
     x: number,
     y: number,
     width: number,

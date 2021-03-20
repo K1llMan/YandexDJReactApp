@@ -1,0 +1,17 @@
+.RocksmithTrack {
+    display: flex;
+    padding: 0 16px;
+    flex-wrap: wrap;
+
+    color: #d1d1d1;
+
+    .artist, .name, .arrangement, .user {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: bold;
+        overflow: hidden;
+
+        color: white;
+    }
+}

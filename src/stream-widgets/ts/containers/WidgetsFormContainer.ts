@@ -5,7 +5,8 @@ const mapStateToProps = (state: any, props: any) => {
     return {
         scheme: state.scheme,
         currentSong: state.currentSong,
-        sound: state.sound
+        sound: state.sound,
+        tracks: state.rocksmith.tracks
     };
 };
 

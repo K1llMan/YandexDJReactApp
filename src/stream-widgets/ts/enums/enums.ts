@@ -1,0 +1,1 @@
+export { RocksmithTrackArrangement } from './RocksmithTrackArrangement';

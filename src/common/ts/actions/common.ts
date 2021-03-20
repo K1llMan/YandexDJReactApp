@@ -1,3 +1,4 @@
+import { Store } from 'redux';
 import { action } from 'typesafe-actions';
 
 /**
@@ -5,13 +6,8 @@ import { action } from 'typesafe-actions';
  * @param store 
  * @param actionsInfo 
  */
-export function getActions(store: any, actionsInfo: any) {
+export function getAction(store: Store, type: any) {
     let dispatchAction = (act: any, data: any) => store.dispatch(action(act, data));
 
-    let functions = {};
-    Object.keys(actionsInfo).map((key: any, i: number) =>
-        functions[key] = (path: string, data: any) => dispatchAction(actionsInfo[key], { path: path, data: data })
-    );
-
-    return functions;
+    return (path: string, data: any) => dispatchAction(type, { path: path, data: data });
 }

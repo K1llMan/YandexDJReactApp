@@ -22,6 +22,7 @@ export default {
             .add('TabsForm', () => {
                 API.getPlaylists();
                 API.getSchemes();
+                API.getTracks();
 
                 return (
                     <Provider store={MusicPlayerStore}>

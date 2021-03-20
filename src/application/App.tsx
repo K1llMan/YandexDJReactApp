@@ -12,6 +12,7 @@ let routes = [
         path: '/', component: () => {
             API.getPlaylists();
             API.getSchemes();
+            API.getTracks();
 
             return (<Provider store={MusicPlayerStore}>
                 <TabsForm />

@@ -54,10 +54,27 @@ let initialState = {
     ],
     scheme: -1,
     widget: -1,
-    fullscreen: false
+    fullscreen: false,
+    rocksmith: {
+        tracks: [
+            {
+                artist: "Test",
+                name: "Test testov",
+                user: "Test",
+                arrangementType: "Any",
+            },
+            {
+                artist: "Test",
+                name: "Test testov",
+                user: "Test",
+                arrangementType: "Any",
+            }
+        ]
+    }
 }
 
 export const ActionTypes = {
+    UPDATE_FROM_SOCKET: 'UPDATE_FROM_SOCKET',
     GET_PLAYLISTS: 'GET_PLAYLISTS',
     GET_PLAYLIST: 'GET_PLAYLIST',
     ADD_TRACK: 'ADD_TRACK',
@@ -69,7 +86,9 @@ export const ActionTypes = {
     REMOVE_WIDGET: 'REMOVE_WIDGET',
     SET_WIDGET_VISIBILITY: 'SET_WIDGET_VISIBILITY',
     SET_WIDGET_ORDER: 'SET_WIDGET_ORDER',
-    SET_FULLSCREEN: 'SET_FULLSCREEN'
+    SET_FULLSCREEN: 'SET_FULLSCREEN',
+    GET_TRACKS: 'GET_TRACKS',
+    REMOVE_TRACK: 'REMOVE_TRACK',
 };
 
 const MusicPlayerStore = configureStore(getReducer(ActionTypes), initialState, null);

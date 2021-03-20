@@ -31,7 +31,7 @@ let updatePath = (state: any, path: string, value: any): any => {
 }
 
 /**
- * Формирование рудуктора
+ * Формирование редуктора
  * @param actions Список действий
  */
 export const getReducer = (actions: any) => {

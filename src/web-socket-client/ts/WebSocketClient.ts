@@ -8,7 +8,7 @@ export class WebSocketClient {
     }
 
     connect(url) {
-        if (this.socket != null)
+        if (this.socket != null && this.socket.readyState == this.socket.OPEN)
             this.socket.close();
 
         this.socket = new WebSocket(url);

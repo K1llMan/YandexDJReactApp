@@ -5,6 +5,7 @@
 @import './components/PlaylistRecord';
 @import './components/SchemeRecord';
 @import './components/WidgetRecord';
+@import './components/RocksmithTrack';
 
 @import './compound-components/Form';
 @import './compound-components/Playlist';
@@ -15,6 +16,7 @@
 @import './compound-components/WidgetsList';
 
 @import './forms/SchemeForm';
+@import './forms/RocksmithForm';
 
 body {
     margin: 0;

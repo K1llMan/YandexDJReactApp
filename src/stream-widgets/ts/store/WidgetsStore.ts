@@ -19,7 +19,16 @@ let initialState = {
         }
     ],
     currentSong: 'Test',
-    sound: ''
+    sound: '',
+    rocksmith: {
+        maxCount: 5,
+        tracks: {
+            artist: "Test",
+            name: "Test testov",
+            user: "Test",
+            arrangementType: "Any",
+        }
+    }
 }
 
 export const ActionTypes = {
@@ -27,7 +36,8 @@ export const ActionTypes = {
     CLEAR_SOUND: 'CLEAR_SOUND',
     UPDATE_SCHEME: 'UPDATE_SCHEME',
     RESIZE_WIDGET: 'RESIZE_WIDGET',
-    DRAG_WIDGET: 'DRAG_WIDGET'
+    DRAG_WIDGET: 'DRAG_WIDGET',
+    GET_TRACKS: 'GET_TRACKS'
 };
 
 const WidgetsStore = configureStore(getReducer(ActionTypes), initialState, null);

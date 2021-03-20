@@ -5,7 +5,7 @@ import '../../scss/root.scss';
 import Fullscreen from 'react-full-screen';
 
 import { API, Form, SchemesList, WidgetsList } from '@Yandex.DJ/service-common';
-import { WidgetsContainer, SongWidget, SoundPlayerWidget } from '@Yandex.DJ/stream-widgets';
+import { WidgetsContainer, SongWidget, SoundPlayerWidget, RocksmithWidget } from '@Yandex.DJ/stream-widgets';
 
 export interface SchemeFormProps {
     schemes: any[],
@@ -46,6 +46,12 @@ const SchemeForm = (props: SchemeFormProps) => {
                 return <SoundPlayerWidget
                     {...commonProps}
                     sound=''
+                />
+            }
+            case 'rocksmith': {
+                return <RocksmithWidget
+                    {...commonProps}
+                    tracks={[]}
                 />
             }
         }

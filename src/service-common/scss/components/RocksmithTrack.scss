@@ -1,0 +1,22 @@
+.RocksmithListTrack {
+    display: flex;
+    
+    @extend %title2;
+
+    .trackContainer {
+        display: flex;
+        color: black;
+
+        .name {
+            font-weight: bold;
+        }
+    }
+
+    .title {
+        margin-right: 16px;
+    }
+
+    button {
+        margin-left: auto;
+    }
+}
