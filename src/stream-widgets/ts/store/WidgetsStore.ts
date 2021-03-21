@@ -22,12 +22,7 @@ let initialState = {
     sound: '',
     rocksmith: {
         maxCount: 5,
-        tracks: {
-            artist: "Test",
-            name: "Test testov",
-            user: "Test",
-            arrangementType: "Any",
-        }
+        tracks: []
     }
 }
 

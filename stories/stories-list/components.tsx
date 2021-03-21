@@ -82,13 +82,13 @@ export default {
                                 artist: "Old Gods of Asgard (Poets of the Fall)",
                                 name: "Zhenschina ya ne tantsuyu (A-Dessa cover) | Женщина я не танцую (A-Dessa cover)",
                                 user: "Useruseruser",
-                                arrangementType: RocksmithTrackArrangement.Any,
+                                arrangementType: 'Rhythm',
                             },
                             {
                                 artist: "Test",
                                 name: "Test testov",
                                 user: "Test",
-                                arrangementType: RocksmithTrackArrangement.Any,
+                                arrangementType: 'Bass',
                             },
                         ]}
                         maxCount={5}

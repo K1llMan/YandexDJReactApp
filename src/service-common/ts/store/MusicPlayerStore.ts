@@ -56,20 +56,7 @@ let initialState = {
     widget: -1,
     fullscreen: false,
     rocksmith: {
-        tracks: [
-            {
-                artist: "Test",
-                name: "Test testov",
-                user: "Test",
-                arrangementType: "Any",
-            },
-            {
-                artist: "Test",
-                name: "Test testov",
-                user: "Test",
-                arrangementType: "Any",
-            }
-        ]
+        tracks: []
     }
 }
 

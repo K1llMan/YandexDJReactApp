@@ -1,0 +1,32 @@
+.DebugForm {
+    > .messages {
+        display: flex;
+        flex-flow: column;
+
+        width: 300px;
+
+        padding: 0 8px;
+
+        > * {
+            margin: 4px 0;
+        }
+
+        .title {
+            display: flex;
+
+            justify-content: center;
+
+            @extend %title2;
+        }
+
+        .name {
+            display: flex;
+
+            flex-grow: 1;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    }
+}

@@ -37,7 +37,6 @@ const initHandlers = () => {
         });
 
         API.addSocketHandler('updateRocksmithTracks', (data: any) => {
-            console.log(data)
             Actions.updateFromSocket('rocksmith.tracks', data);
         });
 

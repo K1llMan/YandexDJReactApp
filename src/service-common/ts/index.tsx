@@ -20,6 +20,7 @@ import TabsForm from './forms/TabsForm';
 import { MusicPlayerFormContainer as MusicPlayerForm } from './containers/MusicPlayerFormContainer';
 import { SchemeFormContainer as SchemeForm } from './containers/SchemeFormContainer';
 import { RocksmithFormContainer as RocksmithForm } from './containers/RocksmithFormContainer';
+import DebugForm from './forms/DebugForm';
 
 export { 
     MusicPlayerStore, API, 
@@ -28,5 +29,5 @@ export {
     
     Form, Playlist, PlaylistCover, PlaylistsGroup, PlaylistsContainer, SchemesList, WidgetsList,
 
-    MusicPlayerForm, SchemeForm, RocksmithForm, TabsForm
+    MusicPlayerForm, SchemeForm, RocksmithForm, DebugForm, TabsForm
 }
