@@ -128,11 +128,7 @@ export const API = {
                     return;
 
                 let tracks: IRocksmithTrack[] = [ ...MusicPlayerStore.getState().rocksmith.tracks ];
-                let index = tracks.indexOf(track);
-                if (index == -1)
-                    return;
-
-                tracks.splice(index, 1);
+                tracks = tracks.filter((t: IRocksmithTrack) => t.key != track.key);
                 Actions.removeTrack(`rocksmith.tracks`, tracks);
             });
     },

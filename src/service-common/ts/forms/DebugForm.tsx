@@ -19,7 +19,7 @@ const DebugForm = (props: DebugFormProps) => {
         <Form className='DebugForm'>
             <div className='messages'>
                 <div className='title'>Сообщения</div>
-                <input ref={name} className='name' placeholder='Имя' value='Test'></input>
+                <input ref={name} className='name' placeholder='Имя' defaultValue='Test'></input>
                 <textarea ref={text}></textarea>
                 <button onClick={send}>Отправить</button>
             </div>

@@ -55,7 +55,7 @@ const initHandlers = () => {
 
         API.addSocketHandler('removeRocksmithTrack', (track: any) => {
             let tracks: IRocksmithTrack[] = [...WidgetsStore.getState().rocksmith.tracks];
-            tracks = tracks.filter((t: IRocksmithTrack) => t.artist != track.artist || t.name != track.name);
+            tracks = tracks.filter((t: IRocksmithTrack) => t.key != track.key);
 
             Actions.updateFromSocket(`rocksmith.tracks`, tracks);
         });
