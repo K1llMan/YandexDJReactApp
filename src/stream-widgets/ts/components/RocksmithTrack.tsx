@@ -13,7 +13,7 @@ const RocksmithTrack = (props: IRocksmithTrackProps) => {
             className='RocksmithTrack'
             {...props}
         >
-            [<span className='arrangement'>{RocksmithTrackArrangement[props.track.arrangementType]}</span>]&nbsp;
+            [<span className='arrangement'>{props.track.arrangementType}</span>]&nbsp;
             <span className='artist'>{props.track.artist}</span>&nbsp;-&nbsp;
             <span className='name'>{props.track.name}</span>
             &nbsp;от&nbsp;

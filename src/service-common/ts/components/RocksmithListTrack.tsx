@@ -7,11 +7,10 @@ export interface RocksmithListListTrackProps extends React.HTMLAttributes<HTMLDi
 }
 
 const RocksmithListListTrack = (props: RocksmithListListTrackProps) => {
-    // <img src={`${props.playlist.cover}`} onClick={props.onClick} />
     return (
         <div className='RocksmithListTrack'>
             <div className="trackContainer">
-                [<span className='arrangement'>{RocksmithTrackArrangement[props.track.arrangementType]}</span>]&nbsp;
+                [<span className='arrangement'>{props.track.arrangementType}</span>]&nbsp;
                 <span className='name'>{props.track.artist} - {props.track.name} от {props.track.user}</span>
             </div>
             <button className='icon-button' onClick={() => props.onRemove(props.track)}><i className="IconsFont">close</i></button>

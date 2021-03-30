@@ -5,5 +5,5 @@ export interface IRocksmithTrack {
     artist: string,
     name: string,
     user: string,
-    arrangementType: RocksmithTrackArrangement
+    arrangementType: string
 }
