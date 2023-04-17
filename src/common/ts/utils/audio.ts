@@ -6,6 +6,7 @@ export function getGainController(sourceElement: HTMLMediaElement) {
     sourceElement.crossOrigin = 'anonymous';
 
     let context = new window.AudioContext();
+    context.resume();
 
     // Узел усиления
     let gainNode = context.createGain();
